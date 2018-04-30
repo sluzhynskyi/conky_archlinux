@@ -1,0 +1,34 @@
+conky.config = {
+    update_interval=1,
+    background=false,
+    text_buffer_size=2048,
+    double_buffer=true,
+    no_buffers=true,
+    use_xft=true,
+    font='monospace:pixelsize=11',
+    draw_shades=false,
+    override_utf8_locale=true,
+    own_window=true,
+    own_window_type='normal',
+    own_window_class='Conky',
+    own_window_argb_visual=true,
+    own_window_hints='undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_argb_value=0,
+    draw_graph_borders=false,
+
+    default_color = '#ea4335',
+    alignment = 'top_left',
+    gap_x = 1700,
+    gap_y = 620,
+    minimum_width = 480, minimum_height = 150,
+    maximum_width = 480, 
+--# ${voffset -38}${upspeedgraph wlp3s0 45,300 14151f 80ff80 scale 15.6Gb -l}
+};
+
+conky.text = [[ 
+${hr}
+#${texeci 7200 ip route | head -c 72 | tail -c 15 | head -c 15 | >> /home/myralllka/Documents/conky_archlinux/my_ip }  
+${execi 1800 nmap $(ip route | head -c 72 | tail -c 15 | head -c 15) | head -n 40 } 
+
+
+]]

@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=conky
+Exec=/home/myralllka/Documents/conky_archlinux/conky_start.sh
